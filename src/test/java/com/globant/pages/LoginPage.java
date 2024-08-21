@@ -23,8 +23,9 @@ public class LoginPage extends BasePage {
         this.passwordInput.sendKeys(password);
     }
 
-    public void clickSubmit() {
+    public HomePage clickSubmit() {
         this.submitBtn.click();
+        return new HomePage(this.driver);
     }
 
     public LoginPage(WebDriver driver, String url) {
