@@ -5,22 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
-    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    @FindBy(css = "#add-to-cart-sauce-labs-backpack")
     private WebElement addToCartBackpackBtn;
 
     @FindBy(className = "shopping_cart_link")
     private WebElement shoppingCartBtn;
 
-    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
+    @FindBy(css = "button[data-test=\"add-to-cart-sauce-labs-bike-light\"]")
     private WebElement addToCartBikeLightBtn;
 
-    @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
+    @FindBy(xpath = "//button[@id=\"add-to-cart-sauce-labs-bolt-t-shirt\"]")
     private WebElement addToCartBoltTShirtBtn;
 
     @FindBy(id = "react-burger-menu-btn")
     private WebElement burgerMenuBtn;
 
-    @FindBy(id = "logout_sidebar_link")
+    @FindBy(css = "#logout_sidebar_link")
     private WebElement logoutBtn;
 
     public void addBackpackToCart(){

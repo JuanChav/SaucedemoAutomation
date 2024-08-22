@@ -8,13 +8,13 @@ public class CheckoutInformationPage extends BasePage{
     @FindBy(id = "first-name")
     private WebElement firstNameInput;
 
-    @FindBy(id = "last-name")
+    @FindBy(css = "input[data-test=\"lastName\"]")
     private WebElement lastNameInput;
 
-    @FindBy(id = "postal-code")
+    @FindBy(css = "#postal-code")
     private WebElement zipInput;
 
-    @FindBy(id = "continue")
+    @FindBy(xpath = "//input[@name=\"continue\"]")
     private WebElement continueBtn;
 
     public void inputFirstName(String firstName){
