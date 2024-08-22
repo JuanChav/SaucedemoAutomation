@@ -56,5 +56,11 @@ public class SaucedemoTest extends BaseTest{
         softAssert.assertTrue(cartPage.verifyExistenceOfShoppingCartBadge(), "There is elements in the cart");
     }
 
+    @Test
+    public void verifySuccesfullLogout(){
+        homePage.clickBurgerMenu();
 
+        loginPage = homePage.clickLogout();
+        loginPage.verifyIfLoginBtnIsDisplayed();
+    }
 }

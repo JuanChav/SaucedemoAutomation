@@ -17,6 +17,12 @@ public class HomePage extends BasePage {
     @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
     private WebElement addToCartBoltTShirtBtn;
 
+    @FindBy(id = "react-burger-menu-btn")
+    private WebElement burgerMenuBtn;
+
+    @FindBy(id = "logout_sidebar_link")
+    private WebElement logoutBtn;
+
     public void addBackpackToCart(){
         this.waitToBeClickable(this.addToCartBackpackBtn);
         this.addToCartBackpackBtn.click();
@@ -36,6 +42,17 @@ public class HomePage extends BasePage {
     public void addBoltTShirtToCart(){
         this.waitToBeClickable(this.addToCartBoltTShirtBtn);
         this.addToCartBoltTShirtBtn.click();
+    }
+
+    public void clickBurgerMenu(){
+        this.waitToBeClickable(this.burgerMenuBtn);
+        this.burgerMenuBtn.click();
+    }
+
+    public LoginPage clickLogout(){
+        this.waitToBeClickable(this.logoutBtn);
+        this.logoutBtn.click();
+        return new LoginPage(this.driver);
     }
 
     public HomePage(WebDriver driver) {

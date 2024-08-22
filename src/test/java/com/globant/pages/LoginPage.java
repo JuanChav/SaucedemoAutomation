@@ -28,8 +28,17 @@ public class LoginPage extends BasePage {
         return new HomePage(this.driver);
     }
 
+    public Boolean verifyIfLoginBtnIsDisplayed(){
+        this.waitElementVisibility(submitBtn);
+        return this.submitBtn.isDisplayed();
+    }
+
     public LoginPage(WebDriver driver, String url) {
         super(driver);
         this.driver.get(url);
+    }
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
     }
 }
