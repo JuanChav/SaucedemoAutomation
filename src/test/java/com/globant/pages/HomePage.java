@@ -16,9 +16,10 @@ public class HomePage extends BasePage {
         this.addToCartBackpackBtn.click();
     }
 
-    public void clickShoppingCart(){
+    public CartPage clickShoppingCart(){
         this.waitToBeClickable(this.shoppingCartBtn);
         this.shoppingCartBtn.click();
+        return new CartPage(this.driver);
     }
 
     public HomePage(WebDriver driver) {
