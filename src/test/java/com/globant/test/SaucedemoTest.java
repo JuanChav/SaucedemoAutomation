@@ -1,9 +1,7 @@
 package com.globant.test;
 
 import com.globant.pages.*;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -30,7 +28,7 @@ public class SaucedemoTest extends BaseTest{
 
     @Test
     public void purchaseAProduct() {
-        homePage.addBackpackToCart();
+        homePage.clickAddToCart();
 
         cartPage = homePage.clickShoppingCart();
 
@@ -48,14 +46,10 @@ public class SaucedemoTest extends BaseTest{
 
     @Test
     public void removingElementsOfTheShoppingCart() {
-        homePage.addBackpackToCart();
-        homePage.addBikeLightToCart();
-        homePage.addBoltTShirtToCart();
+        homePage.clickAddToCartThreeTimes();
 
         cartPage = homePage.clickShoppingCart();
-        cartPage.removeBackpack();
-        cartPage.removeBikeLight();
-        cartPage.removeBoltTShirt();
+        cartPage.removeInCart();
         softAssert.assertTrue(cartPage.verifyExistenceOfShoppingCartBadge(), "There is elements in the cart");
         softAssert.assertAll();
     }
