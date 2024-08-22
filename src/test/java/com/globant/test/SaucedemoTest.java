@@ -43,4 +43,18 @@ public class SaucedemoTest extends BaseTest{
         softAssert.assertEquals(checkoutCompletePage.getHeaderComplete(), "Thank you for your order!");
     }
 
+    @Test
+    public void removingElementsOfTheShoppingCart() {
+        homePage.addBackpackToCart();
+        homePage.addBikeLightToCart();
+        homePage.addBoltTShirtToCart();
+
+        cartPage = homePage.clickShoppingCart();
+        cartPage.removeBackpack();
+        cartPage.removeBikeLight();
+        cartPage.removeBoltTShirt();
+        softAssert.assertTrue(cartPage.verifyExistenceOfShoppingCartBadge(), "There is elements in the cart");
+    }
+
+
 }
