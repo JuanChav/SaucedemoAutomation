@@ -1,0 +1,7 @@
+<suite name="Saucedemo">
+    <test name="Saucedemo Test">
+        <classes>
+            <class name="com.globant.test.SaucedemoTest" />
+        </classes>
+    </test>
+</suite>
